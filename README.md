@@ -5,6 +5,18 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Apache License](http://img.shields.io/cocoapods/l/Mixpanel.svg?style=flat)](https://mixpanel.com)
 
+This fork removes some additional Mixpanel features from the iOS framework target to keep only the basic event tracking functionality. The result is a much slimmer framework binary without any additional resources and a good size reduction for the final app product for those who are only interested in the core event tracking aspect of Mixpanel.
+
+The extra features are removed through removing their corresponding source files from the list of sources to be built and via the following compile-time defines:
+
+```
+"MIXPANEL_NO_REACHABILITY_SUPPORT=1"
+"MIXPANEL_NO_AUTOMATIC_EVENTS_SUPPORT=1"
+"MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT=1"
+"MIXPANEL_NO_CONNECT_INTEGRATION_SUPPORT=1"
+"MIXPANEL_NO_NETWORK_ACTIVITY_INDICATOR=1"
+```
+
 # Table of Contents
 
 <!-- MarkdownTOC -->
